@@ -16,9 +16,10 @@
   min-height: 100vh;
   color: var(--ink);
   background:
-    radial-gradient(circle at 20% 10%, rgba(255, 246, 223, 0.7), transparent 28rem),
+    radial-gradient(circle at 20% 10%, rgba(237, 236, 234, 0.7), transparent 28rem),
     radial-gradient(circle at 80% 0%, rgba(162, 23, 28, 0.08), transparent 24rem),
-    linear-gradient(135deg, #fffaf1, var(--cream-bg) 54%, #ead7bd);
+    linear-gradient(135deg, #fffaf1, var(--cream-bg) 54%, #f5f3ef);
+    
   overflow-x: hidden;
 }
 
@@ -44,7 +45,7 @@
 .falling-characters {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 1;
   overflow: hidden;
   pointer-events: none;
 }
@@ -53,7 +54,7 @@
   position: absolute;
   top: -72px;
   left: var(--fall-left);
-  color: rgba(162, 23, 28, 0.34);
+  color: rgba(236, 230, 230, 0.34);
   font-family: 'Charm', Georgia, serif;
   font-size: var(--fall-size);
   font-weight: 700;
@@ -88,7 +89,6 @@
 .hero::after {
   position: absolute;
   z-index: -1;
-  width: 210px;
   height: 210px;
   content: '';
   background: url('/floral-ornament.svg') center / contain no-repeat;
