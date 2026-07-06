@@ -127,13 +127,8 @@ function App() {
           ))}
         </div>
         <div className="cover__ornament" aria-hidden="true" />
-        <p className="cover__kicker">Trân trọng kính mời</p>
-        <h1>
-          {couple.groom}
-          <span>&</span>
-          {couple.bride}
-        </h1>
-        <p className="cover__date">{couple.date}</p>
+    
+        {/* <p className="cover__date">{couple.date}</p> */}
         <button type="button" className="seal-button" onClick={handleOpenInvitation}>
           <span>Mở Thiệp</span>
         </button>
