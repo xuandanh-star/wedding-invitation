@@ -126,8 +126,25 @@ function App() {
             </span>
           ))}
         </div>
-        <div className="cover__ornament" aria-hidden="true" />
-    
+        <div className="cover__ornament" aria-hidden="true">
+          <div className="ornament-charms" aria-hidden="true">
+            {fallingCharacters.map(([character, left, delay, duration, size], index) => (
+              <span
+                key={`${character}-${left}-ornament`}
+                style={{
+                  '--fall-left': left,
+                  '--fall-delay': delay,
+                  '--fall-duration': duration,
+                  '--fall-size': size,
+                  '--fall-sway': index % 2 === 0 ? '-16px' : '16px',
+                }}
+              >
+                {character}
+              </span>
+            ))}
+          </div>
+        </div>
+
         {/* <p className="cover__date">{couple.date}</p> */}
         <button type="button" className="seal-button" onClick={handleOpenInvitation}>
           <span>Mở Thiệp</span>
