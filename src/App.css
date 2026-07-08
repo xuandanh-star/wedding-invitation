@@ -111,7 +111,7 @@
 
 .cover__ornament {
   position: absolute;
-  inset: 18px;
+  inset: 0px;
   z-index: -1;
   overflow: hidden;
   background:
