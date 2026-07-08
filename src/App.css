@@ -15,10 +15,7 @@
 .invitation {
   min-height: 100vh;
   color: var(--ink);
-  background:
-    radial-gradient(circle at 20% 10%, rgba(237, 236, 234, 0.7), transparent 28rem),
-    radial-gradient(circle at 80% 0%, rgba(162, 23, 28, 0.08), transparent 24rem),
-    linear-gradient(135deg, #fffaf1, var(--cream-bg) 54%, #f7f7f7);
+  background: radial-gradient(circle at 20% 10%, #edeceab3, transparent 28rem), radial-gradient(circle at 80% 0%, #a2171c14, transparent 24rem), linear-gradient(135deg, #fffaf1, #000000 54%, #f7f7f7);
     
   overflow-x: hidden;
 }
