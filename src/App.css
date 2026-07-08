@@ -119,6 +119,30 @@
     url('/anh_cuoi_1.jpg') center / cover no-repeat;
 }
 
+.cover__ornament::before {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  width: min(68%, 320px);
+  aspect-ratio: 4 / 5;
+  content: '';
+  border: 1px solid rgba(255, 246, 223, 0.82);
+  background:
+    linear-gradient(rgba(45, 5, 5, 0.04), rgba(45, 5, 5, 0.16)),
+    url('/anh_cuoi_2.jpg') center / cover no-repeat;
+  transform: translate(-50%, -50%);
+}
+
+.cover__ornament::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background:
+    linear-gradient(180deg, rgba(247, 234, 216, 0.28), transparent 28%, transparent 68%, rgba(247, 234, 216, 0.6)),
+    radial-gradient(circle at 50% 48%, transparent 0 11rem, rgba(255, 250, 241, 0.28) 17rem);
+  pointer-events: none;
+}
+
 .ornament-charms {
   position: absolute;
   inset: 0;
@@ -158,25 +182,6 @@
   }
 }
 
-.cover__ornament::before,
-.cover__ornament::after {
-  position: absolute;
-  left: 50%;
-  width: 120px;
-  height: 26px;
-  content: '';
-  background: linear-gradient(90deg, transparent, var(--gold-300), transparent);
-  transform: translateX(-50%);
-}
-
-.cover__ornament::before {
-  top: -1px;
-}
-
-.cover__ornament::after {
-  bottom: -1px;
-}
-
 .cover__kicker,
 .section-kicker,
 .cover__date,
@@ -211,10 +216,10 @@
 
 .seal-button {
   position: relative;
-  width: 108px;
-  height: 108px;
-  margin-top: 18px;
-  border: 1px solid rgba(255, 227, 161, 0.8);
+  width: 89px;
+  height: 88px;
+  margin-top: 60px;
+  border: 1px solid rgb(234 9 9 / 80%);
   border-radius: 50%;
   color: var(--red-900);
   cursor: pointer;
