@@ -258,6 +258,8 @@ function App() {
           <div className="hero-gallery-4__right"></div>
         </section>
 
+        <p>hello</p>
+
         <section className="events section-block" aria-label="Wedding events">
           {events.map((event) => (
             <article className="event-card" key={event.title}>
