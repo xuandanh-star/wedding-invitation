@@ -755,7 +755,7 @@
 @media (max-width: 480px) {
   .cover__ornament::before {
     width: min(88%, 200px);
-    top: 45%;
+    top: 55%;
     border-width: 0.8px;
   }
 
@@ -780,7 +780,7 @@
 @media (max-width: 992px) {
   .cover__ornament::before {
     width: min(75%, 280px);
-    top: 50%;
+    top: 55%;
   }
 
   .cover__ornament::after {
@@ -804,7 +804,7 @@
 @media (max-width: 768px) {
   .cover__ornament::before {
     width: min(82%, 200px);
-    top: 50%;
+    top: 55%;
   }
 
   .cover__ornament::after {
@@ -828,7 +828,7 @@
 @media (max-width: 480px) {
   .cover__ornament::before {
     width: min(88%, 200px);
-    top: 50%;
+    top: 55%;
     border-width: 0.8px;
   }
 
