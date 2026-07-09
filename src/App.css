@@ -491,6 +491,60 @@
   box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
 }
 
+.hero-gallery {
+  position: relative;
+  height: 940px;
+  overflow: hidden;
+}
+
+.left,
+.right {
+  position: absolute;
+  top: 0;
+  width: 55%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.left {
+  left: 0;
+  background-image: url("/anh_cuoi_03.jpg");
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+  transform: translateX(-100%);
+  animation: leftIn 2s ease forwards;
+}
+
+.right {
+  right: 0;
+  background-image: url("/anh_cuoi_04.jpg");
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+  transform: translateX(100%);
+  animation: rightIn 2s ease forwards;
+}
+
+.center-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: rgba(255,255,255,.5);
+  transform: translateX(-50%);
+}
+
+@keyframes leftIn {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rightIn {
+  to {
+    transform: translateX(0);
+  }
+}
+
 .hero4 {
   position: relative;
   display: grid;
@@ -513,6 +567,79 @@
   text-align: center;
   background: linear-gradient(rgba(45, 5, 5, 0.36), rgb(249 241 241 / 5%)), radial-gradient(circle at 50% 12%, rgba(255, 227, 161, 0.14), transparent 36rem), url(/anh_cuoi_06.jpg) center center / cover no-repeat;
   box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
+}
+
+.hero-gallery-2 {
+  position: relative;
+  width: 100%;
+  height: 940px;
+  overflow: hidden;
+  display: flex;
+  background: #1d0808;
+  box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
+}
+
+/* Shared */
+.hero-gallery-2__left,
+.hero-gallery-2__right {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+/* Left Image */
+.hero-gallery-2__left {
+  background-image:
+    linear-gradient(rgba(45,5,5,.36), rgba(249,241,241,.05)),
+    radial-gradient(circle at 50% 12%, rgba(255,227,161,.14), transparent 36rem),
+    url("/anh_cuoi_05.jpg");
+
+  transform: translateX(-100%);
+  animation-name: heroGallery2Left;
+}
+
+/* Right Image */
+.hero-gallery-2__right {
+  background-image:
+    linear-gradient(rgba(45,5,5,.36), rgba(249,241,241,.05)),
+    radial-gradient(circle at 50% 12%, rgba(255,227,161,.14), transparent 36rem),
+    url("/anh_cuoi_06.jpg");
+
+  transform: translateX(100%);
+  animation-name: heroGallery2Right;
+}
+
+/* Animation */
+@keyframes heroGallery2Left {
+  from {
+    transform: translateX(-100%) scale(1.08);
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes heroGallery2Right {
+  from {
+    transform: translateX(100%) scale(1.08);
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
 }
 
 .hero6 {
@@ -539,6 +666,79 @@
   box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
 }
 
+.hero-gallery-3 {
+  position: relative;
+  width: 100%;
+  height: 940px;
+  overflow: hidden;
+  display: flex;
+  background: #1d0808;
+  box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
+}
+
+/* Shared */
+.hero-gallery-3__left,
+.hero-gallery-3__right {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+/* Left Image */
+.hero-gallery-3__left {
+  background-image:
+    linear-gradient(rgba(45,5,5,.36), rgba(249,241,241,.05)),
+    radial-gradient(circle at 50% 12%, rgba(255,227,161,.14), transparent 36rem),
+    url("/anh_cuoi_07.jpg");
+
+  transform: translateX(-100%);
+  animation-name: heroGallery2Left;
+}
+
+/* Right Image */
+.hero-gallery-3__right {
+  background-image:
+    linear-gradient(rgba(45,5,5,.36), rgba(249,241,241,.05)),
+    radial-gradient(circle at 50% 12%, rgba(255,227,161,.14), transparent 36rem),
+    url("/anh_cuoi_10.jpg");
+
+  transform: translateX(100%);
+  animation-name: heroGallery2Right;
+}
+
+/* Animation */
+@keyframes heroGallery2Left {
+  from {
+    transform: translateX(-100%) scale(1.08);
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes heroGallery2Right {
+  from {
+    transform: translateX(100%) scale(1.08);
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
 
 .hero8 {
   position: relative;
@@ -562,6 +762,79 @@
   text-align: center;
   background: linear-gradient(rgba(45, 5, 5, 0.36), rgb(249 241 241 / 5%)), radial-gradient(circle at 50% 12%, rgba(255, 227, 161, 0.14), transparent 36rem), url(/anh_cuoi_10.jpg) center center / cover no-repeat;
   box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
+}
+
+.hero-gallery-4 {
+  position: relative;
+  width: 100%;
+  height: 940px;
+  overflow: hidden;
+  display: flex;
+  background: #1d0808;
+  box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
+}
+
+/* Shared */
+.hero-gallery-4__left,
+.hero-gallery-4__right {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+/* Left Image */
+.hero-gallery-4__left {
+  background-image:
+    linear-gradient(rgba(45,5,5,.36), rgba(249,241,241,.05)),
+    radial-gradient(circle at 50% 12%, rgba(255,227,161,.14), transparent 36rem),
+    url("/anh_cuoi_08.jpg");
+
+  transform: translateX(-100%);
+  animation-name: heroGallery2Left;
+}
+
+/* Right Image */
+.hero-gallery-4__right {
+  background-image:
+    linear-gradient(rgba(45,5,5,.36), rgba(249,241,241,.05)),
+    radial-gradient(circle at 50% 12%, rgba(255,227,161,.14), transparent 36rem),
+    url("/anh_cuoi_09.jpg");
+
+  transform: translateX09(100%);
+  animation-name: heroGallery2Right;
+}
+
+/* Animation */
+@keyframes heroGallery2Left {
+  from {
+    transform: translateX(-100%) scale(1.08);
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes heroGallery2Right {
+  from {
+    transform: translateX(100%) scale(1.08);
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
 }
 
 

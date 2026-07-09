@@ -192,49 +192,71 @@ function App() {
 
         <header className="hero">
           <div className="hero__content">
-            
+
           </div>
         </header>
 
-         <header className="hero2">
+        {/* <section className="hero2">
           <div className="hero__content">
           </div>
-        </header>
+        </section>
 
-         <header className="hero3">
+        <section className="hero3">
           <div className="hero__content">
           </div>
-        </header>
+        </section> */}
 
-         <header className="hero4">
-          <div className="hero__content">
-          </div>
-        </header>
+        <section className="hero-gallery">
+          <div className="left"></div>
+          <div className="right"></div>
 
-         <header className="hero5">
-          <div className="hero__content">
-          </div>
-        </header>
+          <div className="center-line"></div>
+        </section>
 
-         <header className="hero6">
+        {/* <section className="hero4">
           <div className="hero__content">
           </div>
-        </header>
+        </section>
 
-         <header className="hero7">
+        <section className="hero5">
           <div className="hero__content">
           </div>
-        </header>
+        </section> */}
 
-        <header className="hero8">
-          <div className="hero__content">
-          </div>
-        </header>
+        <section className="hero-gallery-2">
+          <div className="hero-gallery-2__left"></div>
+          <div className="hero-gallery-2__right"></div>
+        </section>
 
-         <header className="hero9">
+        {/* <section className="hero6">
           <div className="hero__content">
           </div>
-        </header>
+        </section>
+
+        <section className="hero7">
+          <div className="hero__content">
+          </div>
+        </section> */}
+
+         <section className="hero-gallery-3">
+          <div className="hero-gallery-3__left"></div>
+          <div className="hero-gallery-3__right"></div>
+        </section>
+
+        {/* <section className="hero8">
+          <div className="hero__content">
+          </div>
+        </section>
+
+        <section className="hero9">
+          <div className="hero__content">
+          </div>
+        </section> */}
+
+        <section className="hero-gallery-4">
+          <div className="hero-gallery-4__left"></div>
+          <div className="hero-gallery-4__right"></div>
+        </section>
 
         <section className="events section-block" aria-label="Wedding events">
           {events.map((event) => (
