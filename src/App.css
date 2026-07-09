@@ -1219,3 +1219,16 @@
       );
   }
 }
+
+.reveal-card__video {
+  width: min(76%, 340px);
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.reveal-card__video video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
