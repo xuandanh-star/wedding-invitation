@@ -128,7 +128,7 @@
   border: 1px solid rgba(255, 246, 223, 0.82);
   background:
     linear-gradient(rgba(45, 5, 5, 0.04), rgba(45, 5, 5, 0.16)),
-    url('/anh_cuoi_02.jpg') center / cover no-repeat;
+    url('/anh_cuoi_03.jpg') center / cover no-repeat;
   transform: translate(-50%, -50%);
 }
 
@@ -777,15 +777,74 @@
 }
 
 /* Tablet */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .cover__ornament::before {
-    width: 240px;
+    width: min(75%, 280px);
+    top: 50%;
+  }
+
+  .cover__ornament::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(247, 234, 216, 0.25),
+        transparent 30%,
+        transparent 70%,
+        rgba(247, 234, 216, 0.5)
+      ),
+      radial-gradient(
+        circle at 50% 48%,
+        transparent 0 9rem,
+        rgba(255, 250, 241, 0.24) 14rem
+      );
   }
 }
 
-/* Large phones */
-@media (max-width: 576px) {
+/* Mobile */
+@media (max-width: 768px) {
   .cover__ornament::before {
-    width: 200px;
+    width: min(82%, 200px);
+    top: 50%;
+  }
+
+  .cover__ornament::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(247, 234, 216, 0.2),
+        transparent 32%,
+        transparent 68%,
+        rgba(247, 234, 216, 0.45)
+      ),
+      radial-gradient(
+        circle at 50% 46%,
+        transparent 0 7rem,
+        rgba(255, 250, 241, 0.2) 11rem
+      );
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .cover__ornament::before {
+    width: min(88%, 200px);
+    top: 50%;
+    border-width: 0.8px;
+  }
+
+  .cover__ornament::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(247, 234, 216, 0.15),
+        transparent 35%,
+        transparent 65%,
+        rgba(247, 234, 216, 0.35)
+      ),
+      radial-gradient(
+        circle at 50% 45%,
+        transparent 0 5.5rem,
+        rgba(255, 250, 241, 0.16) 9rem
+      );
   }
 }
