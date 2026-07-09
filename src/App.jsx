@@ -190,7 +190,22 @@ function App() {
           </h2>
         </section>
 
-         <section className="reveal-card" aria-label="Wedding photo reveal">
+        <section className="reveal-card" aria-label="Wedding video reveal">
+          <div className="reveal-card__video">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+            >
+              <source src="/video_cuoi.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </section>
+
+        <section className="reveal-card" aria-label="Wedding photo reveal">
           <div className="reveal-card__image">
             <img src="/anh_cuoi_02.jpg" alt="Xuân Danh và Thuý An" />
           </div>
@@ -227,12 +242,19 @@ function App() {
           </div>
         </section>
 
-         <section className="reveal-card" aria-label="Wedding photo reveal">
+        <section className="reveal-card" aria-label="Wedding photo reveal">
           <div className="reveal-card__image">
             <img src="/anh_cuoi_06.jpg" alt="Xuân Danh và Thuý An" />
           </div>
         </section>
-{/* 
+
+         <section className="reveal-card" aria-label="Wedding photo reveal">
+          <div className="reveal-card__image">
+            <img src="/anh_cuoi_11.jpg" alt="Xuân Danh và Thuý An" />
+          </div>
+        </section>
+
+        {/* 
         <header className="hero">
           <div className="hero__content">
 
