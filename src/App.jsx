@@ -196,17 +196,45 @@ function App() {
           </div>
         </header>
 
-        <section className="families section-block" aria-label="Families">
-          <div>
-            <p>Nhà trai</p>
-            <strong>{couple.families.groom}</strong>
+         <header className="hero2">
+          <div className="hero__content">
           </div>
-          <span aria-hidden="true">♥</span>
-          <div>
-            <p>Nhà gái</p>
-            <strong>{couple.families.bride}</strong>
+        </header>
+
+         <header className="hero3">
+          <div className="hero__content">
           </div>
-        </section>
+        </header>
+
+         <header className="hero4">
+          <div className="hero__content">
+          </div>
+        </header>
+
+         <header className="hero5">
+          <div className="hero__content">
+          </div>
+        </header>
+
+         <header className="hero6">
+          <div className="hero__content">
+          </div>
+        </header>
+
+         <header className="hero7">
+          <div className="hero__content">
+          </div>
+        </header>
+
+        <header className="hero8">
+          <div className="hero__content">
+          </div>
+        </header>
+
+         <header className="hero9">
+          <div className="hero__content">
+          </div>
+        </header>
 
         <section className="events section-block" aria-label="Wedding events">
           {events.map((event) => (

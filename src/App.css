@@ -467,6 +467,104 @@
   box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
 }
 
+.hero2 {
+  position: relative;
+  display: grid;
+  min-height: 940px;
+  padding: 48px 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 227, 161, 0.5);
+  text-align: center;
+  background: linear-gradient(rgba(45, 5, 5, 0.36), rgb(249 241 241 / 5%)), radial-gradient(circle at 50% 12%, rgba(255, 227, 161, 0.14), transparent 36rem), url(/anh_cuoi_03.jpg) center center / cover no-repeat;
+  box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
+}
+
+.hero3 {
+  position: relative;
+  display: grid;
+  min-height: 940px;
+  padding: 48px 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 227, 161, 0.5);
+  text-align: center;
+  background: linear-gradient(rgba(45, 5, 5, 0.36), rgb(249 241 241 / 5%)), radial-gradient(circle at 50% 12%, rgba(255, 227, 161, 0.14), transparent 36rem), url(/anh_cuoi_04.jpg) center center / cover no-repeat;
+  box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
+}
+
+.hero4 {
+  position: relative;
+  display: grid;
+  min-height: 940px;
+  padding: 48px 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 227, 161, 0.5);
+  text-align: center;
+  background: linear-gradient(rgba(45, 5, 5, 0.36), rgb(249 241 241 / 5%)), radial-gradient(circle at 50% 12%, rgba(255, 227, 161, 0.14), transparent 36rem), url(/anh_cuoi_05.jpg) center center / cover no-repeat;
+  box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
+}
+
+.hero5 {
+  position: relative;
+  display: grid;
+  min-height: 940px;
+  padding: 48px 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 227, 161, 0.5);
+  text-align: center;
+  background: linear-gradient(rgba(45, 5, 5, 0.36), rgb(249 241 241 / 5%)), radial-gradient(circle at 50% 12%, rgba(255, 227, 161, 0.14), transparent 36rem), url(/anh_cuoi_06.jpg) center center / cover no-repeat;
+  box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
+}
+
+.hero6 {
+  position: relative;
+  display: grid;
+  min-height: 940px;
+  padding: 48px 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 227, 161, 0.5);
+  text-align: center;
+  background: linear-gradient(rgba(45, 5, 5, 0.36), rgb(249 241 241 / 5%)), radial-gradient(circle at 50% 12%, rgba(255, 227, 161, 0.14), transparent 36rem), url(/anh_cuoi_07.jpg) center center / cover no-repeat;
+  box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
+}
+
+.hero7 {
+  position: relative;
+  display: grid;
+  min-height: 940px;
+  padding: 48px 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 227, 161, 0.5);
+  text-align: center;
+  background: linear-gradient(rgba(45, 5, 5, 0.36), rgb(249 241 241 / 5%)), radial-gradient(circle at 50% 12%, rgba(255, 227, 161, 0.14), transparent 36rem), url(/anh_cuoi_08.jpg) center center / cover no-repeat;
+  box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
+}
+
+
+.hero8 {
+  position: relative;
+  display: grid;
+  min-height: 940px;
+  padding: 48px 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 227, 161, 0.5);
+  text-align: center;
+  background: linear-gradient(rgba(45, 5, 5, 0.36), rgb(249 241 241 / 5%)), radial-gradient(circle at 50% 12%, rgba(255, 227, 161, 0.14), transparent 36rem), url(/anh_cuoi_09.jpg) center center / cover no-repeat;
+  box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
+}
+
+.hero9 {
+  position: relative;
+  display: grid;
+  min-height: 940px;
+  padding: 48px 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 227, 161, 0.5);
+  text-align: center;
+  background: linear-gradient(rgba(45, 5, 5, 0.36), rgb(249 241 241 / 5%)), radial-gradient(circle at 50% 12%, rgba(255, 227, 161, 0.14), transparent 36rem), url(/anh_cuoi_10.jpg) center center / cover no-repeat;
+  box-shadow: 0 24px 58px rgba(30, 3, 3, 0.35);
+}
+
+
 .hero__content {
   display: grid;
   justify-items: center;
