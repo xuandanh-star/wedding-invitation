@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
 const couple = {
@@ -56,8 +56,18 @@ const fallingCharacters = [
 
 function App() {
   const [isOpened, setIsOpened] = useState(false)
+  const [isOpening, setIsOpening] = useState(false)
   const [isMusicPlaying, setIsMusicPlaying] = useState(false)
   const audioRef = useRef(null)
+  const openTimerRef = useRef(null)
+
+  useEffect(() => {
+    return () => {
+      if (openTimerRef.current) {
+        clearTimeout(openTimerRef.current)
+      }
+    }
+  }, [])
 
   const playMusic = () => {
     const audio = audioRef.current
@@ -73,8 +83,17 @@ function App() {
   }
 
   const handleOpenInvitation = () => {
-    setIsOpened(true)
+    if (isOpening || isOpened) {
+      return
+    }
+
+    setIsOpening(true)
     playMusic()
+
+    openTimerRef.current = setTimeout(() => {
+      setIsOpened(true)
+      setIsOpening(false)
+    }, 1050)
   }
 
   const handleCloseInvitation = () => {
@@ -86,6 +105,7 @@ function App() {
     }
 
     setIsMusicPlaying(false)
+    setIsOpening(false)
     setIsOpened(false)
   }
 
@@ -105,8 +125,14 @@ function App() {
     setIsMusicPlaying(false)
   }
 
+  const invitationClassName = [
+    'invitation',
+    isOpening ? 'is-opening' : '',
+    isOpened ? 'is-opened' : '',
+  ].filter(Boolean).join(' ')
+
   return (
-    <main className={isOpened ? 'invitation is-opened' : 'invitation'}>
+    <main className={invitationClassName}>
       <audio ref={audioRef} src={musicSource} preload="auto" loop />
 
       <section className="cover" aria-label="Wedding invitation cover">
@@ -146,31 +172,27 @@ function App() {
         </div>
 
         {/* <p className="cover__date">{couple.date}</p> */}
-        <button type="button" className="seal-button" onClick={handleOpenInvitation}>
-          <span>Mở Thiệp</span>
+        <button type="button" className="seal-button" onClick={handleOpenInvitation} disabled={isOpening}>
+          <span>{isOpening ? 'Đang Mở' : 'Mở Thiệp'}</span>
         </button>
       </section>
 
       <section className="page" aria-hidden={!isOpened}>
+        <section className="reveal-card" aria-label="Wedding photo reveal">
+          <div className="reveal-card__image">
+            <img src="/anh_cuoi_01.jpg" alt="Xuân Danh và Thuý An" />
+          </div>
+          <h3>16-08-2026</h3>
+          <h2>
+            {couple.groom}
+            <span>&</span>
+            {couple.bride}
+          </h2>
+        </section>
+
         <header className="hero">
           <div className="hero__content">
-            <p className="section-kicker">Wedding Invitation</p>
-            <div className="double-happiness" aria-hidden="true">
-              <span>囍</span>
-            </div>
-            <h2>
-              {couple.groom}
-              <span>&</span>
-              {couple.bride}
-            </h2>
-            <p className="hero__copy">
-              Hai gia đình hân hoan báo tin lễ thành hôn của hai con chúng tôi.
-              Kính mời quý khách đến chung vui trong ngày trọng đại.
-            </p>
-            <div className="hero__date">
-              <span>{couple.date}</span>
-              <small>{couple.lunarDate}</small>
-            </div>
+            
           </div>
         </header>
 
