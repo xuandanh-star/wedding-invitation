@@ -210,15 +210,10 @@ function App() {
 
         <section className="reveal-card" aria-label="Wedding photo reveal">
           <div className="reveal-card__image">
-            <img src="/anh_cuoi_05.jpg" alt="Xuân Danh và Thuý An" />
+            <img src="/anh_cuoi_10.jpg" alt="Xuân Danh và Thuý An" />
           </div>
         </section>
 
-        <section className="reveal-card" aria-label="Wedding photo reveal">
-          <div className="reveal-card__image">
-            <img src="/anh_cuoi_06.jpg" alt="Xuân Danh và Thuý An" />
-          </div>
-        </section>
 
         <section className="reveal-card" aria-label="Wedding photo reveal">
           <div className="reveal-card__image">
@@ -226,13 +221,25 @@ function App() {
           </div>
         </section>
 
+        <section className="reveal-card" aria-label="Wedding photo reveal">
+          <div className="reveal-card__image">
+            <img src="/anh_cuoi_05.jpg" alt="Xuân Danh và Thuý An" />
+          </div>
+        </section>
+
+         <section className="reveal-card" aria-label="Wedding photo reveal">
+          <div className="reveal-card__image">
+            <img src="/anh_cuoi_06.jpg" alt="Xuân Danh và Thuý An" />
+          </div>
+        </section>
+{/* 
         <header className="hero">
           <div className="hero__content">
 
           </div>
-        </header>
+        </header> */}
 
-        <section className="hero2">
+        {/* <section className="hero2">
           <div className="hero__content">
           </div>
         </section>
@@ -271,7 +278,7 @@ function App() {
         <section className="hero9">
           <div className="hero__content">
           </div>
-        </section>
+        </section> */}
 
 
         <section className="events section-block" aria-label="Wedding events">
