@@ -124,6 +124,8 @@
     .reveal-card.bounce.active {
       opacity: 1;
       transform: translateY(0);
+      position: fixed;
+      z-index: -1;
     }
 
     /* 5. Blur + Slide Up */
