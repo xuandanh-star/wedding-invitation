@@ -76,6 +76,126 @@ const fallingCharacters = [
   ['禄', '91%', '3.4s', '10.8s', '1.25rem'],
 ]
 
+// ---------- IMAGE DATA (6 images with different animations) ----------
+const IMAGE_SECTIONS = [
+  {
+    id: 1,
+    imgSrc: '/anh_cuoi_02.jpg',
+    alt: 'Couple in mountain lake',
+    animation: 'bounce-up',
+    badge: 'Bounce up',
+  },
+  {
+    id: 2,
+    imgSrc: '/anh_cuoi_03.jpg',
+    alt: 'Urban city night',
+    animation: 'slide-left',
+    badge: 'Slide left',
+  },
+  {
+    id: 3,
+    imgSrc: '/anh_cuoi_04.jpg',
+    alt: 'Forest path',
+    animation: 'zoom-rotate',
+    badge: 'Zoom + rotate',
+  },
+  {
+    id: 4,
+
+    imgSrc: '/anh_cuoi_05.jpg',
+    alt: 'Sunset over ocean',
+    animation: 'flip-3d',
+    badge: '3D flip',
+  },
+  {
+    id: 5,
+    imgSrc: '/anh_cuoi_06.jpg',
+    alt: 'Snowy mountain peak',
+    animation: 'blur-slide',
+    badge: 'Blur + slide',
+  },
+  {
+    id: 6,
+    imgSrc: '/anh_cuoi_07.jpg',
+    alt: 'Peaceful lake view',
+    animation: 'scale-fade',
+    badge: 'Scale + fade',
+  },
+  {
+    id: 7,
+    imgSrc: '/anh_cuoi_08.jpg',
+    alt: 'Peaceful lake view',
+    animation: 'scale-fade',
+    badge: 'Scale + fade',
+  },
+  {
+    id: 8,
+    imgSrc: '/anh_cuoi_09.jpg',
+    alt: 'Peaceful lake view',
+    animation: 'scale-fade',
+    badge: 'Scale + fade',
+  },
+  {
+    id: 9,
+    imgSrc: '/anh_cuoi_10.jpg',
+    alt: 'Peaceful lake view',
+    animation: 'scale-fade',
+    badge: 'Scale + fade',
+  },
+];
+
+// ============================================
+//  REVEAL CARD COMPONENT (handles one section)
+// ============================================
+function RevealCard({ data, index }) {
+  const [isActive, setIsActive] = useState(false);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setIsActive(true);
+          // unobserve after first appearance (optional)
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.2, // 20% visible → trigger
+        rootMargin: '0px 0px -30px 0px',
+      }
+    );
+
+    const currentCard = cardRef.current;
+    if (currentCard) {
+      observer.observe(currentCard);
+    }
+
+    return () => {
+      if (currentCard) {
+        observer.unobserve(currentCard);
+      }
+    };
+  }, []);
+
+  // ----- build className dynamically -----
+  const cardClassName = [
+    'reveal-card',
+    data.animation, // e.g. 'bounce-up', 'slide-left', etc.
+    isActive && 'active',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  return (
+    <section ref={cardRef} className={cardClassName}>
+      <div className="reveal-card__image">
+        <img src={data.imgSrc} alt={data.alt} loading="lazy" />
+      </div>
+    </section>
+  );
+}
 function App() {
   const [isOpened, setIsOpened] = useState(false)
   const [isOpening, setIsOpening] = useState(false)
@@ -238,12 +358,6 @@ function App() {
         </button>
       </section>
 
-      <section
-        ref={cardRef}
-        className={cardClassName}
-      >
-      </section>
-
       <section className="page" aria-hidden={!isOpened}>
         <section className="reveal-card" aria-label="Wedding photo reveal">
           <div className="reveal-card__image">
@@ -272,7 +386,7 @@ function App() {
           </div>
         </section>
 
-        <section className="reveal-card">
+        {/* <section className="reveal-card">
           <div className="reveal-card__image">
             <img src="/anh_cuoi_02.jpg" alt="Xuân Danh và Thuý An" />
           </div>
@@ -282,9 +396,14 @@ function App() {
           <div className="reveal-card__image">
             <img src="/anh_cuoi_03.jpg" alt="Xuân Danh và Thuý An" />
           </div>
-        </section>
+        </section> */}
 
-        <section className="reveal-card" aria-label="Wedding photo reveal">
+        {/* ✅ FIXED: RevealCard components now inside page section */}
+        {IMAGE_SECTIONS.map((img, idx) => (
+          <RevealCard key={img.id} data={img} index={idx} />
+        ))}
+
+        {/* <section className="reveal-card" aria-label="Wedding photo reveal">
           <div className="reveal-card__image">
             <img src="/anh_cuoi_04.jpg" alt="Xuân Danh và Thuý An" />
           </div>
@@ -313,7 +432,7 @@ function App() {
           <div className="reveal-card__image">
             <img src="/anh_cuoi_06.jpg" alt="Xuân Danh và Thuý An" />
           </div>
-        </section>
+        </section> */}
 
         <section className="events section-block" aria-label="Wedding events">
           {events.map((event) => (

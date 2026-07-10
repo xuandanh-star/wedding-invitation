@@ -12,36 +12,46 @@
   --ink: #3b0d0d;
 }
 
-/* ============================================
-       REVEAL CARD STYLES
-    ============================================ */
+/* ----- REVEAL CARD (the animated section) ----- */
     .reveal-card {
-      background: linear-gradient(145deg, #1a1a2e, #16213e);
+      background: linear-gradient(145deg, #14162e, #1c1e3a);
       border-radius: 2rem;
-      padding: 2rem;
-      margin-bottom: 6rem;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      transition: box-shadow 0.3s ease;
-      /* Initial hidden state */
+      padding: 2rem 2rem 2.2rem;
+      margin-bottom: 5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: box-shadow 0.4s ease, border-color 0.4s ease;
+
+      /* ---- initial hidden state (before scroll) ---- */
       opacity: 0;
-      transform: translateY(80px) scale(0.95);
-      transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(70px) scale(0.96);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.4s ease,
+                  border-color 0.4s ease;
     }
 
     .reveal-card:hover {
-      box-shadow: 0 30px 80px rgba(245, 87, 108, 0.15);
-      border-color: rgba(245, 87, 108, 0.2);
+      box-shadow: 0 30px 70px rgba(245, 87, 108, 0.10);
+      border-color: rgba(245, 87, 108, 0.15);
     }
 
+    /* ---- ACTIVE state (triggered by scroll) ---- */
+    .reveal-card.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* image wrapper */
     .reveal-card__image {
       width: 100%;
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto;
       border-radius: 1.5rem;
       overflow: hidden;
-      aspect-ratio: 4/3;
-      background: #2a2a44;
+      aspect-ratio: 16 / 10;
+      background: #232544;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
       position: relative;
     }
 
@@ -54,15 +64,16 @@
     }
 
     .reveal-card:hover .reveal-card__image img {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
+    /* caption & badge */
     .reveal-card__caption {
       text-align: center;
       margin-top: 1.5rem;
-      font-size: 1.1rem;
-      color: #aaaacc;
-      letter-spacing: 0.5px;
+      font-size: 1.05rem;
+      color: #b8b8d6;
+      letter-spacing: 0.3px;
     }
 
     .reveal-card__caption strong {
@@ -70,22 +81,25 @@
       font-weight: 500;
     }
 
-    /* ============================================
-       ACTIVE CLASS - triggers the animation
-    ============================================ */
-    .reveal-card.active {
-      opacity: 1;
-      transform: translateY(0) scale(1);
+    .animation-badge {
+      display: inline-block;
+      margin-top: 0.6rem;
+      padding: 0.25rem 1.2rem;
+      background: rgba(245, 87, 108, 0.12);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #f5576c;
+      border: 1px solid rgba(245, 87, 108, 0.15);
+      letter-spacing: 0.4px;
     }
 
-    /* ============================================
-       VARIATIONS: Different animation styles
-    ============================================ */
+    /* ----- DIFFERENT ANIMATION VARIANTS (via additional classes) ----- */
 
-    /* 1. Slide from Left */
+    /* 1. Slide from left */
     .reveal-card.slide-left {
       opacity: 0;
-      transform: translateX(-100px) scale(0.9);
+      transform: translateX(-90px) scale(0.95);
       transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     .reveal-card.slide-left.active {
@@ -93,95 +107,94 @@
       transform: translateX(0) scale(1);
     }
 
-    /* 2. Zoom In */
-    .reveal-card.zoom-in {
+    /* 2. Zoom + rotate */
+    .reveal-card.zoom-rotate {
       opacity: 0;
-      transform: scale(0.6) rotate(-3deg);
+      transform: scale(0.6) rotate(-4deg);
       transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
-    .reveal-card.zoom-in.active {
+    .reveal-card.zoom-rotate.active {
       opacity: 1;
       transform: scale(1) rotate(0deg);
     }
 
-    /* 3. Flip In */
-    .reveal-card.flip {
+    /* 3. Flip 3D */
+    .reveal-card.flip-3d {
       opacity: 0;
-      transform: perspective(1000px) rotateY(45deg) scale(0.8);
+      transform: perspective(1000px) rotateY(40deg) scale(0.85);
       transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
-    .reveal-card.flip.active {
+    .reveal-card.flip-3d.active {
       opacity: 1;
       transform: perspective(1000px) rotateY(0deg) scale(1);
     }
 
-    /* 4. Bounce Up */
-    .reveal-card.bounce {
+    /* 4. Bounce up */
+    .reveal-card.bounce-up {
       opacity: 0;
       transform: translateY(120px);
       transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
-    .reveal-card.bounce.active {
+    .reveal-card.bounce-up.active {
       opacity: 1;
       transform: translateY(0);
-      position: fixed;
-      z-index: -1;
     }
 
-    /* 5. Blur + Slide Up */
-    .reveal-card.blur-up {
+    /* 5. Blur + slide up */
+    .reveal-card.blur-slide {
       opacity: 0;
       transform: translateY(60px);
       filter: blur(10px);
       transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    .reveal-card.blur-up.active {
+    .reveal-card.blur-slide.active {
       opacity: 1;
       transform: translateY(0);
       filter: blur(0);
     }
 
-    /* 6. Rotate + Scale */
-    .reveal-card.rotate-scale {
+    /* 6. Scale + fade */
+    .reveal-card.scale-fade {
       opacity: 0;
-      transform: rotate(10deg) scale(0.7);
-      transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transform: scale(0.7);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
-    .reveal-card.rotate-scale.active {
+    .reveal-card.scale-fade.active {
       opacity: 1;
-      transform: rotate(0deg) scale(1);
+      transform: scale(1);
     }
 
-    /* Animation badge */
-    .animation-badge {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.3rem 1rem;
-      background: rgba(245, 87, 108, 0.15);
-      border-radius: 100px;
-      font-size: 0.75rem;
-      color: #f5576c;
-      border: 1px solid rgba(245, 87, 108, 0.2);
-    }
-
+    /* ----- SCROLL HINT (footer) ----- */
     .scroll-hint {
       text-align: center;
-      color: #444466;
-      margin-top: 3rem;
+      color: #4a4a6a;
+      margin-top: 2.5rem;
       font-size: 0.9rem;
-      animation: pulse 2s infinite;
+      letter-spacing: 0.5px;
+      animation: pulse 2.4s infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 1; }
+      0%,
+      100% {
+        opacity: 0.4;
+        transform: translateY(0);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(6px);
+      }
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
+    /* ----- RESPONSIVE ----- */
+    @media (max-width: 640px) {
+      .site-header h1 {
+        font-size: 2.1rem;
+      }
       .reveal-card {
-        padding: 1.5rem;
+        padding: 1.2rem 1.2rem 1.6rem;
         border-radius: 1.5rem;
+        margin-bottom: 3.5rem;
       }
       .reveal-card__caption {
         font-size: 0.95rem;
