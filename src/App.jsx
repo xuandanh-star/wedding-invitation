@@ -1,6 +1,28 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
+// ---------- IMAGE DATA (3 placeholder images from picsum) ----------
+const IMAGES = [
+  {
+    id: 1,
+    title: 'Mountain lake',
+    url: 'https://picsum.photos/id/1015/600/400',  // mountain
+    alt: 'Scenic mountain lake',
+  },
+  {
+    id: 2,
+    title: 'City night',
+    url: 'https://picsum.photos/id/1018/600/400',  // city
+    alt: 'Urban night skyline',
+  },
+  {
+    id: 3,
+    title: 'Forest path',
+    url: 'https://picsum.photos/id/1043/600/400',  // forest
+    alt: 'Sunlit forest trail',
+  },
+];
+
 const couple = {
   groom: 'Xuân Danh',
   bride: 'Thuý An',
@@ -60,6 +82,8 @@ function App() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false)
   const audioRef = useRef(null)
   const openTimerRef = useRef(null)
+  const [isActive, setIsActive] = useState(false);
+  const cardRef = useRef(null);
 
   useEffect(() => {
     return () => {
@@ -68,6 +92,42 @@ function App() {
       }
     }
   }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setIsActive(true);
+          // Unobserve after animation triggers
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.2,        // 20% visible triggers animation
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+
+    const currentCard = cardRef.current;
+    if (currentCard) {
+      observer.observe(currentCard);
+    }
+
+    return () => {
+      if (currentCard) {
+        observer.unobserve(currentCard);
+      }
+    };
+  }, []);
+
+  const cardClassName = [
+    'reveal-card',
+    'bounce',          // Animation style (change this to try different animations)
+    isActive && 'active'
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   const playMusic = () => {
     const audio = audioRef.current
@@ -152,6 +212,7 @@ function App() {
             </span>
           ))}
         </div>
+
         <div className="cover__ornament" aria-hidden="true">
           <div className="ornament-charms" aria-hidden="true">
             {fallingCharacters.map(([character, left, delay, duration, size], index) => (
@@ -175,6 +236,12 @@ function App() {
         <button type="button" className="seal-button" onClick={handleOpenInvitation} disabled={isOpening}>
           <span>{isOpening ? 'Đang Mở' : 'Mở Thiệp'}</span>
         </button>
+      </section>
+
+      <section
+        ref={cardRef}
+        className={cardClassName}
+      >
       </section>
 
       <section className="page" aria-hidden={!isOpened}>
@@ -205,13 +272,13 @@ function App() {
           </div>
         </section>
 
-        <section className="reveal-card" aria-label="Wedding photo reveal">
+        <section className="reveal-card">
           <div className="reveal-card__image">
             <img src="/anh_cuoi_02.jpg" alt="Xuân Danh và Thuý An" />
           </div>
         </section>
 
-        <section className="reveal-card" aria-label="Wedding photo reveal">
+        <section className="reveal-card">
           <div className="reveal-card__image">
             <img src="/anh_cuoi_03.jpg" alt="Xuân Danh và Thuý An" />
           </div>
@@ -247,61 +314,6 @@ function App() {
             <img src="/anh_cuoi_06.jpg" alt="Xuân Danh và Thuý An" />
           </div>
         </section>
-
-         <section className="reveal-card" aria-label="Wedding photo reveal">
-          <div className="reveal-card__image">
-            <img src="/anh_cuoi_11.jpg" alt="Xuân Danh và Thuý An" />
-          </div>
-        </section>
-
-        {/* 
-        <header className="hero">
-          <div className="hero__content">
-
-          </div>
-        </header> */}
-
-        {/* <section className="hero2">
-          <div className="hero__content">
-          </div>
-        </section>
-
-        <section className="hero3">
-          <div className="hero__content">
-          </div>
-        </section>
-
-        <section className="hero4">
-          <div className="hero__content">
-          </div>
-        </section>
-
-        <section className="hero5">
-          <div className="hero__content">
-          </div>
-        </section>
-
-
-        <section className="hero6">
-          <div className="hero__content">
-          </div>
-        </section>
-
-        <section className="hero7">
-          <div className="hero__content">
-          </div>
-        </section>
-
-        <section className="hero8">
-          <div className="hero__content">
-          </div>
-        </section>
-
-        <section className="hero9">
-          <div className="hero__content">
-          </div>
-        </section> */}
-
 
         <section className="events section-block" aria-label="Wedding events">
           {events.map((event) => (

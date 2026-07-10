@@ -12,6 +12,180 @@
   --ink: #3b0d0d;
 }
 
+/* ============================================
+       REVEAL CARD STYLES
+    ============================================ */
+    .reveal-card {
+      background: linear-gradient(145deg, #1a1a2e, #16213e);
+      border-radius: 2rem;
+      padding: 2rem;
+      margin-bottom: 6rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: box-shadow 0.3s ease;
+      /* Initial hidden state */
+      opacity: 0;
+      transform: translateY(80px) scale(0.95);
+      transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-card:hover {
+      box-shadow: 0 30px 80px rgba(245, 87, 108, 0.15);
+      border-color: rgba(245, 87, 108, 0.2);
+    }
+
+    .reveal-card__image {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: #2a2a44;
+      position: relative;
+    }
+
+    .reveal-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .reveal-card:hover .reveal-card__image img {
+      transform: scale(1.05);
+    }
+
+    .reveal-card__caption {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      color: #aaaacc;
+      letter-spacing: 0.5px;
+    }
+
+    .reveal-card__caption strong {
+      color: #f5576c;
+      font-weight: 500;
+    }
+
+    /* ============================================
+       ACTIVE CLASS - triggers the animation
+    ============================================ */
+    .reveal-card.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* ============================================
+       VARIATIONS: Different animation styles
+    ============================================ */
+
+    /* 1. Slide from Left */
+    .reveal-card.slide-left {
+      opacity: 0;
+      transform: translateX(-100px) scale(0.9);
+      transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal-card.slide-left.active {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+
+    /* 2. Zoom In */
+    .reveal-card.zoom-in {
+      opacity: 0;
+      transform: scale(0.6) rotate(-3deg);
+      transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .reveal-card.zoom-in.active {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+
+    /* 3. Flip In */
+    .reveal-card.flip {
+      opacity: 0;
+      transform: perspective(1000px) rotateY(45deg) scale(0.8);
+      transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .reveal-card.flip.active {
+      opacity: 1;
+      transform: perspective(1000px) rotateY(0deg) scale(1);
+    }
+
+    /* 4. Bounce Up */
+    .reveal-card.bounce {
+      opacity: 0;
+      transform: translateY(120px);
+      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    .reveal-card.bounce.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 5. Blur + Slide Up */
+    .reveal-card.blur-up {
+      opacity: 0;
+      transform: translateY(60px);
+      filter: blur(10px);
+      transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal-card.blur-up.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    /* 6. Rotate + Scale */
+    .reveal-card.rotate-scale {
+      opacity: 0;
+      transform: rotate(10deg) scale(0.7);
+      transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .reveal-card.rotate-scale.active {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+
+    /* Animation badge */
+    .animation-badge {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.3rem 1rem;
+      background: rgba(245, 87, 108, 0.15);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      color: #f5576c;
+      border: 1px solid rgba(245, 87, 108, 0.2);
+    }
+
+    .scroll-hint {
+      text-align: center;
+      color: #444466;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .reveal-card {
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+      }
+      .reveal-card__caption {
+        font-size: 0.95rem;
+      }
+    }
+
 .invitation {
   min-height: 100vh;
   color: var(--ink);
