@@ -15,11 +15,9 @@
 /* ----- REVEAL CARD (the animated section) ----- */
     .reveal-card {
       background: linear-gradient(145deg, #14162e, #1c1e3a);
-      border-radius: 2rem;
       padding: 2rem 2rem 2.2rem;
       margin-bottom: 5rem;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.04);
       transition: box-shadow 0.4s ease, border-color 0.4s ease;
 
       /* ---- initial hidden state (before scroll) ---- */
@@ -47,7 +45,6 @@
       width: 100%;
       max-width: 700px;
       margin: 0 auto;
-      border-radius: 1.5rem;
       overflow: hidden;
       aspect-ratio: 16 / 10;
       background: #232544;
@@ -537,7 +534,6 @@
   margin-bottom: 18px;
   padding: 28px 18px 30px;
   overflow: hidden;
-  border: 1px solid rgba(162, 23, 28, 0.18);
   text-align: center;
   background: radial-gradient(circle at 50% 22%, rgb(82 70 41 / 28%), transparent 16rem), linear-gradient(135deg, rgb(244 242 238 / 96%), rgb(254 255 243 / 0%));
   box-shadow: 0 20px 44px rgba(45, 5, 5, 0.16);
@@ -1411,7 +1407,6 @@
 .reveal-card__video {
   width: min(76%, 340px);
   overflow: hidden;
-  border-radius: 20px;
 }
 
 .reveal-card__video video {

@@ -386,53 +386,10 @@ function App() {
           </div>
         </section>
 
-        {/* <section className="reveal-card">
-          <div className="reveal-card__image">
-            <img src="/anh_cuoi_02.jpg" alt="Xuân Danh và Thuý An" />
-          </div>
-        </section>
-
-        <section className="reveal-card">
-          <div className="reveal-card__image">
-            <img src="/anh_cuoi_03.jpg" alt="Xuân Danh và Thuý An" />
-          </div>
-        </section> */}
-
         {/* ✅ FIXED: RevealCard components now inside page section */}
         {IMAGE_SECTIONS.map((img, idx) => (
           <RevealCard key={img.id} data={img} index={idx} />
         ))}
-
-        {/* <section className="reveal-card" aria-label="Wedding photo reveal">
-          <div className="reveal-card__image">
-            <img src="/anh_cuoi_04.jpg" alt="Xuân Danh và Thuý An" />
-          </div>
-        </section>
-
-        <section className="reveal-card" aria-label="Wedding photo reveal">
-          <div className="reveal-card__image">
-            <img src="/anh_cuoi_10.jpg" alt="Xuân Danh và Thuý An" />
-          </div>
-        </section>
-
-
-        <section className="reveal-card" aria-label="Wedding photo reveal">
-          <div className="reveal-card__image">
-            <img src="/anh_cuoi_07.jpg" alt="Xuân Danh và Thuý An" />
-          </div>
-        </section>
-
-        <section className="reveal-card" aria-label="Wedding photo reveal">
-          <div className="reveal-card__image">
-            <img src="/anh_cuoi_05.jpg" alt="Xuân Danh và Thuý An" />
-          </div>
-        </section>
-
-        <section className="reveal-card" aria-label="Wedding photo reveal">
-          <div className="reveal-card__image">
-            <img src="/anh_cuoi_06.jpg" alt="Xuân Danh và Thuý An" />
-          </div>
-        </section> */}
 
         <section className="events section-block" aria-label="Wedding events">
           {events.map((event) => (
